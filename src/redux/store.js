@@ -1,8 +1,9 @@
-import { createSlice, configureStore } from '@reduxjs/toolkit'
+import { configureStore, createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
     counter: 0,
     showCounter: true,
+    isLoading: false
 }
 
 const counterSlice = createSlice({
@@ -29,4 +30,5 @@ const store = configureStore({
         counter: counterSlice.reducer
     }
 })
+export const counterActions = counterSlice.actions
 export default store
