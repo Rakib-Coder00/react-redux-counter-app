@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux"
-import { counterActions } from "../redux/store"
+import { counterActions } from "../redux/features/counterSlice"
 
 const Counter = () => {
     const dispatch = useDispatch()
