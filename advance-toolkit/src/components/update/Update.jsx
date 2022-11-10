@@ -4,22 +4,23 @@ import "./update.css";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { remove, update } from "../../redux/features/userSlice";
+import { updateUser } from "../../redux/api";
 
 export default function Update() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user.userInfo);
   const dispatch = useDispatch();
   const handleClick = (e) => {
     e.preventDefault();
     // without API
-    dispatch(update({ name, email }));
+    // dispatch(update({ name, email }));
     // with API
-    // dispatch(updateUser2({ name, email }));
+    updateUser({ name, email }, dispatch)
   };
   const handleDelete = (e) => {
     e.preventDefault();
-    dispatch(remove())
+    // dispatch(remove())
   }
   return (
     <div className="update">
